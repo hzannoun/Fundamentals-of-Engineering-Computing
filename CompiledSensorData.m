@@ -1,0 +1,10 @@
+rough=xlsread("sandpaper.xlsx");
+medium=xlsread("constructpaper.xlsx");
+smooth=xlsread("clearplastic.xlsx");
+train=[rough;medium;smooth];
+result(1:10)=1;
+result(11:20)=2;
+result(21:30)=3;
+result=result';
+SensorTree = fitctree(train,result);
+view(SensorTree,'mode','graph');
